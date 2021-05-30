@@ -1,28 +1,30 @@
 <employee>
+<employee>
 	<id> ID </id>
 	<name> NAME </name>
 	<address> ADDRESS </address>
-	<derartment> DEPARTMENT </department>
+	<department> DEPARTMENT </department>
 	<salary> SALARY </salary>
 </employee>
 <employee>
 	<id> 1 </id>
 	<name> John Doe </name>
 	<address> H# 38, R#3, Banani, Dhaka </address>
-	<derartment> Sales </department>
+	<department> Sales </department>
 	<salary> $20000 </salary>
 </employee>
 <employee>
 	<id> 2 </id>
 	<name> Mark Zuckerberg </name>
 	<address> Flat# A/1, H# 20, R#18, Mirpur, Dhaka </address>
-	<derartment> Accounts </department>
+	<department> Accounts </department>
 	<salary> $12000 </salary>
 </employee>
 <employee>
 	<id> 3 </id>
 	<name> Ala Voski </name>
 	<address> H# 38, R#3, Motijheel </address>
-	<derartment> Human Resource </department>
+	<department> Human Resource </department>
 	<salary> $30000 </salary>
+</employee>
 </employee>
