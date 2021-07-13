@@ -1,0 +1,43 @@
+<?php
+	require_once('checkDisplay.php');
+	$users = getUserByDisplay();
+?>
+<html>
+<head>
+<title>
+Search
+</title>
+</head>
+<body>
+
+<fieldset>
+<legend>
+Search
+</legend>
+<form method="get" action="checkSearch.php">
+<table border="1">
+			<tr><td><input type="text" name="searchName" value="Search"></td><td><input type="submit" name="search" value="Search By Name"></td></tr>
+			<tr>
+				<td>name</td>
+				<td>profit</td>
+				
+			</tr>
+
+			<?php  for($i=0; $i<count($users); $i++){ ?>
+				<tr>
+					<td><?=$users[$i]['name']?></td>
+					<td><?=$users[$i]['profit']?></td>
+					
+					<td>
+						<a href="edit.php?name=<?=$users[$i]['name']?>">Edit</a> |
+						<a href="delete.php?name=<?=$users[$i]['name']?>">Delete</a>
+					</td>
+				</tr>
+			<?php } ?>
+			
+		</table>
+</form>
+</fieldset>
+
+</body>
+</html>

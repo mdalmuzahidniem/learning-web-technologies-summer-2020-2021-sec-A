@@ -1,0 +1,31 @@
+<?php
+
+	require_once('checkEdit.php');
+	
+	$name = $_GET['name'];
+	
+	$user= getUserByDisplay($name);
+
+	
+
+
+?>
+<html>
+
+		<form method="post" action="checkEdit.php">
+			<fieldset>
+				<table>
+				<tr><td>Name</td></tr>
+				<tr><td><input type="text" name="name" value="<?=$user['name']?>" readonly="true"></td></tr>
+				<tr><td>Buying Price</td></tr>
+				<tr><td><input type="number" name="bPrice" value="<?=$user['bPrice']?>"></td></tr>
+				<tr><td>Selling Price</td></tr>
+				<tr><td><input type="number" name="sPrice" value="<?=$user['sPrice']?>"></td></tr>
+
+				</table>
+				<input type="checkbox" name="display" value="yes"> Display
+				<td><input type="submit" name="update" value="Update"></td>
+			</fieldset>
+		</form>
+
+</html>
