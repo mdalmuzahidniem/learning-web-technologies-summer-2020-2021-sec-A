@@ -9,11 +9,17 @@
         <br>
         <button onclick="getName()">Submit</button>
 <script>
+		var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		function getName(){
 			let email = document.getElementById('name').value;
 
 			if(email != ''){
-				alert('Valid input');
+				if(email.match(mailformat)){
+						alert('Valid Email');
+					}
+					else{
+						alert('invalid Email');
+					}
 			}else{
 				alert('null value');
 			}

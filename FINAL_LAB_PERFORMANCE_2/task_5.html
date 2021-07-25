@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title> task_5 </title>
+</head>
+<body>
+<fieldset>
+    <legend> DEGREE </legend>
+	
+        <input id="ssc" type="checkbox" name="ssc" value="SSC"> SSC
+		<input id="hsc" type="checkbox" name="hsc" value="HSC"> HSC
+		<input id="bsc" type="checkbox" name="bsc" value="BSc"> BSc
+		<input id="msc" type="checkbox" name="msc" value="MSc"> MSc   
+    
+</fieldset>
+<br>
+<input onclick="getvalidation()"type="submit" name="submit" value="Submit">
+
+<script>
+		function getvalidation(){
+
+			if(document.getElementById('ssc').checked || document.getElementById('hsc').checked || document.getElementById('bsc').checked || document.getElementById('msc').checked){
+				alert('atleast one option is selected');
+			}else{
+				alert('Not selected');
+			}
+		}
+</script>
+</body>
+</html>

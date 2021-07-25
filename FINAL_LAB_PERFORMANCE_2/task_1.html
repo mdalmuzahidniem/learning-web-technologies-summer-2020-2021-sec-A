@@ -16,7 +16,19 @@
 			let name = document.getElementById('name').value;
 
 			if(name != ''){
-				alert('done');
+				if(name.indexOf(' ')>=0)
+				{
+					if((/[a-zA-Z]/).test(name.charAt(0))){
+					alert('Valid name');
+					}
+					else{
+						alert('Warning! Name should be start with a letter');
+					}
+				}
+				else{
+					alert('Warning! Name should be consist of at least two words');
+				}
+				
 			}else{
 				alert('null value');
 			}

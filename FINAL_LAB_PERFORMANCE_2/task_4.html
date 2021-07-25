@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title> task_4 </title>
+</head>
+<body>
+<fieldset>
+    <legend> Date of Birth </legend>
+  
+		<table>
+		<tr>
+		<td>dd</td> <td> mm </td> <td> yyyy</td> </tr>
+        <tr><td><input id="dd" type="number"  > / </td>
+		<td><input id="mm" type="number" name="mm" > / </td>
+		<td><input id="yyyy" type="number" name="yyyy" > </td></tr>
+		</br>
+		</table>
+		<hr>
+        <input onclick="getVelidation()" type="submit" name="submit" value="Submit">
+        
+  
+</fieldset>
+
+<script>
+		function getVelidation(){
+			let dd = document.getElementById('dd').value;
+			let mm = document.getElementById('mm').value;
+			let yyyy = document.getElementById('yyyy').value;
+
+			if(dd != '' && mm != '' && yyyy != ''){
+				if( dd > 0 && dd <= 31 && mm>=1 && mm<=12 && yyyy>=1900 && yyyy<= 2016 ){
+					alert('Valid date');
+					}
+					else{
+						alert('invalid Date');
+					}
+			}else{
+				alert('null value found');
+			}
+		}
+</script>
+</body>
+</html>

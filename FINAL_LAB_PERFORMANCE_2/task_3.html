@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title> task_3 </title>
+</head>
+<body>
+<fieldset>
+    <legend> GENDER </legend>
+   
+        <input id="m" type="radio" name="gender" value=""> Male
+		<input id="F" type="radio" name="gender" value="Femail"> Female
+		<input id="o" type="radio" name="gender" value="other"> Other 
+</fieldset>
+<br>
+<input onclick="getName()" type="submit" name="submit" value="Submit">
+
+<script>
+		function getName(){
+
+			if(document.getElementById('m').checked || document.getElementById('F').checked || document.getElementById('o').checked){
+				alert('one radio button is selected');
+			}else{
+				alert('Not selected');
+			}
+		}
+</script>
+</body>
+</html>
