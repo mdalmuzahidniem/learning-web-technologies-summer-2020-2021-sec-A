@@ -1,0 +1,154 @@
+<html>
+<head>
+	<title> Person profile </title>
+</head>
+<body>
+<table border="1">
+<form>
+<tr> <td colspan="3"> <h2>PERSON PROFILE</h2></td> </tr>
+<tr> <td> Name</td> <td width="250px"><input id="name" type="text" name="name" value=""></td> <td width="10px"></td> </tr>
+<tr> <td>Email</td> <td><input id="email" type="email" name="email" value=""></td> <td width="10px"></td> </tr>
+<tr> <td>Gender</td> <td> 
+		<input id="m" type="radio" name="gender" value=""> Male
+		<input id="F" type="radio" name="gender" value="Femail"> Female
+		<input id="o" type="radio" name="gender" value="other"> Other 
+</td> <td></td> </tr>
+<tr> <td>Date of birth</td> <td>
+<input id="dd" type="number" style="width:50px;" > / 
+<input id="mm" type="number" name="mm" style="width:50px;"> /
+<input id="yyyy" type="number" name="yyyy" style="width:100px;">
+</td> <td></td> </tr>
+<tr> <td>Blood Group</td> <td>
+		<select id="bg" name="bg"> 
+		<option value="select">select group</option>
+		<option value="A+">A+</option>
+		<option value="B+">B+</option>
+		<option value="AB+">AB+</option>
+		<option value="O+">O+</option>
+		</select>
+</td> <td></td> </tr>
+<tr> <td>Degree</td> <td>
+        <input id="ssc" type="checkbox" name="ssc" value="SSC"> SSC
+		<input id="hsc" type="checkbox" name="hsc" value="HSC"> HSC
+		<input id="bsc" type="checkbox" name="bsc" value="BSc"> BSc
+		<input id="msc" type="checkbox" name="msc" value="MSc"> MSc 
+</td> <td></td> </tr>
+<tr> <td>Photo</td> <td colspan="2"><input id="pic" type="file" name="pic" ></td> </tr>
+<tr height="25px"=> <td colspan="3"> </td> </tr>
+<tr align="right"> <td colspan="3"> <input onclick="getName()" type="submit" name="submit" value="Submit"> <input type="Reset" name="reset" value="reset"></td> </tr>
+</form>
+</table>
+
+<script>
+
+		//photo
+		function getPhoto(){
+		let pic= document.getElementById('pic').value;
+		if( pic !=''){
+				alert('Form is valid.');
+				}
+				else{
+					alert('photo is not valid');
+				}
+		}else{
+			alert('Photo is not selected');
+		}
+		}
+		
+		//Degree
+		function getDegree(){
+
+			if(document.getElementById('ssc').checked || document.getElementById('hsc').checked || document.getElementById('bsc').checked || document.getElementById('msc').checked){
+				//alert('Degree is selected');
+				getPhoto();
+			}else{
+				alert(' Degree is not selected');
+			}
+		}
+		
+		//blood group
+		function getBg(){
+		let s= document.getElementById('bg');
+		if(s.selectedIndex){
+			//alert('Blood group is selected');
+			getDegree();
+		}else{
+			alert('Blood group is not selected');
+		}
+		}
+		//DOB
+		function getDob(){
+			let dd = document.getElementById('dd').value;
+			let mm = document.getElementById('mm').value;
+			let yyyy = document.getElementById('yyyy').value;
+
+			if(dd != '' && mm != '' && yyyy != ''){
+				if( dd > 0 && dd <= 31 && mm>=1 && mm<=12 && yyyy>=1900 && yyyy<= 2016 ){
+					//alert('Date of birth is valid.');
+					getBg();
+					}
+					else{
+						alert('invalid Date of birth');
+					}
+			}else{
+				alert('null value in Date of birth');
+			}
+		}
+		
+		//gender
+		function getGender(){
+
+			if(document.getElementById('m').checked || document.getElementById('F').checked || document.getElementById('o').checked){
+				//alert('Gender is selected');
+				getDob();
+			}else{
+				alert('Gender is not selected');
+			}
+		}
+		//email
+		function getEmail(){
+			var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			let email = document.getElementById('email').value;
+
+			if(email != ''){
+				if(email.match(mailformat)){
+						//alert('Valid Email');
+						getGender();
+					}
+					else{
+						alert('invalid Email');
+					}
+			}else{
+				alert('Email is null');
+			}
+		}
+		
+		
+		//name
+		function getName(){
+		let name = document.getElementById('name').value;
+
+			if(name != ''){
+				if(name.indexOf(' ')>=0)
+				{
+					if((/[a-zA-Z]/).test(name.charAt(0))){
+					//alert('Valid name');
+					getEmail();
+					}
+					else{
+						alert('Warning! Name should be start with a letter');
+					}
+				}
+				else{
+					alert('Warning! Name should be consist of at least two words');
+				}
+				
+			}else{
+				alert('Name is null');
+			}
+			}
+</script>
+
+
+</body>
+</html>
