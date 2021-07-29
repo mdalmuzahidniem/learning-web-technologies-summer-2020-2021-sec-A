@@ -1,18 +1,18 @@
 <?php
 	
-	$email = $_POST['email'];
+	$email = $_GET['email'];
 	
 
-		if(empty($email))
+		if($email==null)
 		{
-			echo 'Enter Your Email..';
+			echo "Email is empty";
 		}
 		else
 		{
 			$conn = mysqli_connect('localhost', 'root', '', 'ajax_test');
-			$sql = "INSERT INTO 'email' ('Email') VALUES ('$email')";
+			$sql = "insert into email(Email) values('$email')";
 			$result = mysqli_query($conn, $sql);
-			echo 'Insert Successful..';
+			echo "Insert Successful..";
 		}
 
 	

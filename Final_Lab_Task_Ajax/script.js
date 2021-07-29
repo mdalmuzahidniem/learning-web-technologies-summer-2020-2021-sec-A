@@ -2,9 +2,8 @@ function subscribe(){
 
 	let email = document.getElementById('email').value;
 	const http = new XMLHttpRequest();
-	http.open('POST', 'server_subscribe.php', true);
-	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	http.send('email=${email}');
+	http.open('GET', `server_subscribe.php?email=${email}`, true);
+	http.send();
 	http.onreadystatechange = function(){
 
 		if(this.readyState == 4 && this.status == 200){
@@ -16,9 +15,8 @@ function unsubscribe(){
 
 	let email = document.getElementById('email').value;
 	const http = new XMLHttpRequest();
-	http.open('POST', 'server_unsubscribe.php', true);
-	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	http.send('email=${email}');
+	http.open('GET', `server_unsubscribe.php?email=${email}`, true);
+	http.send();
 	http.onreadystatechange = function(){
 
 		if(this.readyState == 4 && this.status == 200){
