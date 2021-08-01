@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+		<fieldset>
+			<legend>Registration</legend>
+					Id<br>
+					<input id="id" type="number" name="id"><br>
+				
+					Password<br>
+					<input name="password" type="text" name="password" maxlength="10"><br>
+				
+					Conform Password<br>
+					<input id="confPassword" type="text" name="confPassword" maxlength="10"><br>
+				
+					Name<br>
+					<input id="username" type="text" name="username" ><br>
+				
+					Email<br>
+					<input id="email" type="email" name="email" ><br>
+
+					User Type[User/Admin]<br>
+						<select name="type">
+							<option value="user">User</option>
+							<option value="admin">Admin</option>	
+						</select>		
+					<hr><input onclick="getId()"type="submit" name="registration" value="Registration"> <a href="login.html"> Login </a>	
+		</fieldset>
+<script>
+
+		//email
+		function getEmail(){
+			var mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			let email = document.getElementById('email').value;
+
+			if(email != ''){
+				if(email.match(mailformat)){
+						alert('Valid form');
+						
+					}
+					else{
+						alert('invalid Email');
+					}
+			}else{
+				alert('Email is null');
+			}
+		}
+		//name
+		function getName(){
+		let name = document.getElementById('username').value;
+
+			if(name != ''){
+				if(name.indexOf(' ')>=0)
+				{
+					if((/[a-zA-Z]/).test(name.charAt(0))){
+					alert('Valid name');
+					getEmail();
+					}
+					else{
+						alert('Warning! Name should be start with a letter');
+					}
+				}
+				else{
+					alert('Warning! Name should be consist of at least two words');
+				}
+				
+			}else{
+				alert('Name is null');
+			}
+			}
+			
+			//Password
+			function getPass(){
+		
+			let pas1 = document.getElementById('password').value;
+			let pas2 = document.getElementById('confPassword').value;
+			
+			if(pas1 != '' && pas2!=''){
+				getName();
+			}else{
+				alert('Password is null');
+			}
+		}
+		
+			
+			//id
+			function getId(){
+			let id = document.getElementById('id').value;
+
+			if(id != ''){
+				if(id.length>=4)
+				{
+					getPass();
+				}
+				else{
+					alert('Warning! password length should be more than 4');
+				}
+				
+			}else{
+				alert('id is null');
+			}
+			}
+</script>
+</body>
+</html>
