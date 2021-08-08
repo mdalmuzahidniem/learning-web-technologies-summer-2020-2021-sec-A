@@ -32,7 +32,7 @@
 						<td><input type="password" name="password"></td>
 					</tr>
 					<tr>
-						<td></td>
+						<td><a href="register.php">Register</a></td>
 						<td><input type="submit" name="submit" value="Submit"></td>
 					</tr>
 				</table>

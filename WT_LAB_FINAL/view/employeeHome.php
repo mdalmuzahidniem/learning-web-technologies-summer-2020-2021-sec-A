@@ -7,7 +7,7 @@
 		<h3>Home page</h3>
 
 		<form>
-			<a href="job.php">Manage Job</a>
+			<a href="manageJob.php">Manage Job</a>
 			
 			
 		</form>

@@ -43,7 +43,7 @@
 
 	function getAllUser(){
 		$conn = getConnection();
-		$sql = "select * from users";
+		$sql = "select * from user";
 		$result = mysqli_query($conn, $sql);
 		$users = [];
 
@@ -109,5 +109,17 @@
 			return false;
 		}
 	
+	}
+	function getJobInfo(){
+		$conn = getConnection();
+		$sql = "select * from job";
+		$result = mysqli_query($conn, $sql);
+		$users = [];
+
+		while($user = mysqli_fetch_assoc($result)){
+			array_push($users, $user);
+		}
+
+		return $users;
 	}
 ?>
